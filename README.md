@@ -37,7 +37,7 @@ InterviewGod-PenTest-Report/
 # InterviewGod.ai - Security & QA Penetration Test Report
 **45 Bugs | 7 Critical | Full Account Takeover Risk | Google Internal Endpoint Leak**
 
-![InterviewGod.ai Logo](screenshots/header.png)
+![InterviewGod.ai Logo]
 
 **Researcher:** Komal Ratnaparkhe  
 **Role:** Cybersecurity / QA Intern Applicant  
@@ -118,7 +118,7 @@ setInterval(() => {
 
 ## Recommended Fix Priority
 
-```mermaid
+mermaid
 gantt
     title Remediation Roadmap
     dateFormat  YYYY-MM-DD
@@ -131,7 +131,7 @@ gantt
     section Months 2-3
     Automated Testing Suite       :2025-12-01, 30d
     Security Headers + WAF        :2025-12-15, 14d
-```
+
 
 ---
 
@@ -175,7 +175,7 @@ node_modules/
 ```
 
 ### 5. Report pdf
-Create `[screenshots/](https://docs.google.com/document/d/13fnUHI9smwQtUbXxXOZKn6QYxZkdNB_Mkzhp7wujNfs/edit?usp=drive_link).
+Create `[Report & screenshots/](https://docs.google.com/document/d/13fnUHI9smwQtUbXxXOZKn6QYxZkdNB_Mkzhp7wujNfs/edit?usp=drive_link).
 
 ---
 
